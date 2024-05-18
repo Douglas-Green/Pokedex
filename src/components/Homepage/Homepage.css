@@ -1,0 +1,98 @@
+/** @format */
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #202422;
+}
+
+.home-loading {
+  font-size: 2rem;
+  color: gold;
+  text-shadow: 3px 3px 3px magenta;
+  animation: grow 2s linear infinite;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1.7);
+  }
+  0% {
+    transform: scale(0.7);
+  }
+}
+
+.title {
+  font-size: 8rem;
+  font-weight: bold;
+  letter-spacing: 4rem;
+  text-align: center;
+  text-shadow: 2px 2px 8px magenta;
+  color: gold;
+  cursor: pointer;
+}
+
+.title-char {
+  display: inline-block;
+  transition: color 0.1s ease, text-decoration 0.3s ease;
+}
+
+.title-char:hover {
+  transform: scale(1.8);
+  color: var(--random-color);
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 5px;
+}
+
+.title-addon {
+  font-size: 1rem;
+  text-align: center;
+  color: green;
+  text-shadow: 2px 1px 1px blue;
+  margin-top: -80px;
+}
+
+.home-image-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 90px;
+}
+
+.home-card-image {
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  margin-right: 60px;
+  margin-top: 70px;
+  border-radius: 20px;
+  transition: transform 2s;
+  transform: translateX(0);
+  animation: scroll-cards 5000s linear infinite;
+}
+
+.home-card-image.paused {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-cards {
+  0% {
+    transform: translateX(100%); /* start at the right edge of the page */
+  }
+  50% {
+    transform: translateX(
+      -10000%
+    ); /* halfway through the animation, be at the left edge */
+  }
+  100% {
+    transform: translateX(
+      -100%
+    ); /* end at twice the distance from the left edge of the page */
+  }
+}
